@@ -19,7 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.zcrain.composeunit.NavigationActions
 import com.zcrain.composeunit.NavigationConfig
 
@@ -33,7 +32,11 @@ fun HomeScreen(navController: NavController) {
     val navAction = remember(navController) {
         NavigationActions(navController)
     }
-    val menus = arrayListOf(NavigationConfig.ROUTE_LOADING, NavigationConfig.ROUTE_CODE_INPUT)
+    val menus = arrayListOf(
+        NavigationConfig.ROUTE_LOADING,
+        NavigationConfig.ROUTE_CODE_INPUT,
+        NavigationConfig.ROUTE_BIG_POSTER
+    )
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier.padding(10.dp)
