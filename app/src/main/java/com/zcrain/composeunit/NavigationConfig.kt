@@ -54,7 +54,7 @@ fun AppNavHost(
             BigPosterScreen()
         }
         composable(NavigationConfig.ROUTE_CONSTRAIN_LAYOUT){
-            ConstrainLayoutScreen()
+            ConstrainLayoutScreen(navController)
         }
     }
 }

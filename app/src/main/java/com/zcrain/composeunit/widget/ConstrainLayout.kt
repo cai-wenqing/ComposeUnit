@@ -93,7 +93,7 @@ fun CollapsingScafold(backClick: () -> Unit, collapsingContent: @Composable () -
                 .fillMaxSize()
                 .swipeable(
                     state = swipingState,
-                    thresholds = { _, _ -> FractionalThreshold(04f) },
+                    thresholds = { _, _ -> FractionalThreshold(0.4f) },
                     orientation = Orientation.Vertical,
                     anchors = mapOf(
                         0f to CollapsingState.COLLAPSED,
