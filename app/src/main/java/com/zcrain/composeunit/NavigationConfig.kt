@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.zcrain.composeunit.ui.BigPosterScreen
 import com.zcrain.composeunit.ui.CodeInputScreen
+import com.zcrain.composeunit.ui.ConstrainLayoutScreen
 import com.zcrain.composeunit.ui.HomeScreen
 import com.zcrain.composeunit.ui.LoadingScreen
 
@@ -26,6 +27,8 @@ object NavigationConfig {
     const val ROUTE_CODE_INPUT = "CodeInputView"
 
     const val ROUTE_BIG_POSTER = "BigPoster"
+
+    const val ROUTE_CONSTRAIN_LAYOUT = "ConstrainLayout"
 }
 
 @Composable
@@ -50,6 +53,9 @@ fun AppNavHost(
         composable(NavigationConfig.ROUTE_BIG_POSTER) {
             BigPosterScreen()
         }
+        composable(NavigationConfig.ROUTE_CONSTRAIN_LAYOUT){
+            ConstrainLayoutScreen()
+        }
     }
 }
 
@@ -61,6 +67,7 @@ class NavigationActions(private val navController: NavController) {
             NavigationConfig.ROUTE_LOADING -> navController.navigate(NavigationConfig.ROUTE_LOADING)
             NavigationConfig.ROUTE_CODE_INPUT -> navController.navigate(NavigationConfig.ROUTE_CODE_INPUT)
             NavigationConfig.ROUTE_BIG_POSTER -> navController.navigate(NavigationConfig.ROUTE_BIG_POSTER)
+            NavigationConfig.ROUTE_CONSTRAIN_LAYOUT -> navController.navigate(NavigationConfig.ROUTE_CONSTRAIN_LAYOUT)
         }
     }
 }
