@@ -1,4 +1,4 @@
-package com.zcrain.composeunit.ui
+package com.zcrain.composeunit.ui.components
 
 import android.animation.ValueAnimator
 import android.content.Context

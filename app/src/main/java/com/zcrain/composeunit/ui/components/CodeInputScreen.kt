@@ -1,4 +1,4 @@
-package com.zcrain.composeunit.ui
+package com.zcrain.composeunit.ui.components
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box

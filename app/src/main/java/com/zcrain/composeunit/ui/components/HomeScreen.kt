@@ -1,4 +1,4 @@
-package com.zcrain.composeunit.ui
+package com.zcrain.composeunit.ui.components
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -9,7 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
@@ -18,9 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import com.zcrain.composeunit.NavigationActions
-import com.zcrain.composeunit.NavigationConfig
+import com.zcrain.composeunit.NaviConfig
 
 /**
  * @Author:CWQ
@@ -28,22 +26,19 @@ import com.zcrain.composeunit.NavigationConfig
  * @DESC:
  */
 @Composable
-fun HomeScreen(navController: NavController) {
-    val navAction = remember(navController) {
-        NavigationActions(navController)
-    }
+fun HomeScreen(navList: SnapshotStateList<String>) {
     val menus = arrayListOf(
-        NavigationConfig.ROUTE_LOADING,
-        NavigationConfig.ROUTE_CODE_INPUT,
-        NavigationConfig.ROUTE_BIG_POSTER
+        NaviConfig.ROUTE_LOADING,
+        NaviConfig.ROUTE_CODE_INPUT,
+        NaviConfig.ROUTE_BIG_POSTER
     )
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier.padding(10.dp)
     ) {
-        items(menus) { string ->
-            MenuView(string) {
-                navAction.navStart(string)
+        items(menus) { item ->
+            MenuView(item) {
+                navList.add(item)
             }
         }
     }
