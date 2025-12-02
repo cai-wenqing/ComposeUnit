@@ -35,8 +35,7 @@ fun HomeScreen(navController: NavController) {
     val menus = arrayListOf(
         NavigationConfig.ROUTE_LOADING,
         NavigationConfig.ROUTE_CODE_INPUT,
-        NavigationConfig.ROUTE_BIG_POSTER,
-        NavigationConfig.ROUTE_CONSTRAIN_LAYOUT
+        NavigationConfig.ROUTE_BIG_POSTER
     )
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(10.dp),
