@@ -1,8 +1,8 @@
 package com.zcrain.composeunit.ui.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,11 +18,11 @@ import com.zcrain.composeunit.widget.LoadingIndicator
 @Composable
 fun LoadingScreen() {
     Column(
-        modifier = Modifier.fillMaxSize().background(Color.White),
+        modifier = Modifier.fillMaxSize().padding(vertical = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         LoadingIndicator(
-            color = Color(0xFFB8A7E0),
+            color = Color.Black,
             size = 86.dp,
             barCount = 8,
             animationDuration = 800

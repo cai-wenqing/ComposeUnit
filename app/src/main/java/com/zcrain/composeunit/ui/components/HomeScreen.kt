@@ -3,6 +3,7 @@ package com.zcrain.composeunit.ui.components
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -20,21 +21,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zcrain.composeunit.NaviConfig
 
-/**
- * @Author:CWQ
- * @DATE:2023/10/7
- * @DESC:
- */
+
 @Composable
 fun HomeScreen(navList: SnapshotStateList<String>) {
     val menus = arrayListOf(
         NaviConfig.ROUTE_LOADING,
-        NaviConfig.ROUTE_CODE_INPUT,
-        NaviConfig.ROUTE_BIG_POSTER
+        NaviConfig.ROUTE_INPUT,
+        NaviConfig.ROUTE_BIG_POSTER,
+        NaviConfig.ROUTE_BANNER,
+        NaviConfig.ROUTE_SELECTOR,
     )
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(10.dp),
-        modifier = Modifier.padding(10.dp)
+        verticalArrangement = Arrangement.spacedBy(15.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(vertical = 20.dp, horizontal = 10.dp)
     ) {
         items(menus) { item ->
             MenuView(item) {
@@ -51,7 +52,7 @@ fun MenuView(string: String, modifier: Modifier = Modifier, onClick: (() -> Unit
         text = string,
         modifier = modifier
             .border(width = 1.dp, Color.Blue, shape = RoundedCornerShape(5.dp))
-            .padding(horizontal = 6.dp, vertical = 2.dp)
+            .padding(horizontal = 6.dp, vertical = 4.dp)
             .clickable {
                 onClick?.invoke()
             },

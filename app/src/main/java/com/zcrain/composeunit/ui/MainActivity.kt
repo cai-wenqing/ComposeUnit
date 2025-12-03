@@ -16,10 +16,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.ui.NavDisplay
 import com.zcrain.composeunit.NaviConfig
+import com.zcrain.composeunit.ui.components.BannerScreen
 import com.zcrain.composeunit.ui.components.BigPosterScreen
 import com.zcrain.composeunit.ui.components.CodeInputScreen
 import com.zcrain.composeunit.ui.components.HomeScreen
 import com.zcrain.composeunit.ui.components.LoadingScreen
+import com.zcrain.composeunit.ui.components.SelectorScreen
 
 class MainActivity : ComponentActivity() {
 
@@ -35,7 +37,7 @@ class MainActivity : ComponentActivity() {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(innerPadding.calculateTopPadding())
+                        .padding(top = innerPadding.calculateTopPadding())
                 ) {
                     val backStack =
                         rememberSaveable { mutableStateListOf(NaviConfig.ROUTE_HOME) }
@@ -54,12 +56,20 @@ class MainActivity : ComponentActivity() {
                                     LoadingScreen()
                                 }
 
-                                NaviConfig.ROUTE_CODE_INPUT -> NavEntry(entry) {
+                                NaviConfig.ROUTE_INPUT -> NavEntry(entry) {
                                     CodeInputScreen()
                                 }
 
                                 NaviConfig.ROUTE_BIG_POSTER -> NavEntry(entry) {
                                     BigPosterScreen()
+                                }
+
+                                NaviConfig.ROUTE_BANNER -> NavEntry(entry) {
+                                    BannerScreen()
+                                }
+
+                                NaviConfig.ROUTE_SELECTOR -> NavEntry(entry) {
+                                    SelectorScreen()
                                 }
 
                                 else -> NavEntry(entry) {

@@ -11,7 +11,11 @@ object NaviConfig {
 
     const val ROUTE_LOADING = "LoadingView"
 
-    const val ROUTE_CODE_INPUT = "CodeInputView"
+    const val ROUTE_INPUT = "InputView"
 
     const val ROUTE_BIG_POSTER = "BigPoster"
+
+    const val ROUTE_BANNER = "Banner"
+
+    const val ROUTE_SELECTOR = "Selector"
 }
