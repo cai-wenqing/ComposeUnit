@@ -46,6 +46,7 @@ fun CodeInputField(
     modifier: Modifier = Modifier,
     itemHeight: Dp = 50.dp,
     itemMargin: Dp = 8.dp,
+    autoFocus: Boolean = false,
     onValueChange: (String) -> Unit = {},
     onVerify: (String) -> Unit = {},
 ) {
@@ -55,7 +56,7 @@ fun CodeInputField(
     val keyboardController = LocalSoftwareKeyboardController.current
 
     LaunchedEffect(value) {
-        if (value.isEmpty()) {
+        if (autoFocus && value.isEmpty()) {
             focusRequester.requestFocus()
         }
     }

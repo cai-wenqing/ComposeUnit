@@ -18,7 +18,7 @@ import androidx.navigation3.ui.NavDisplay
 import com.zcrain.composeunit.NaviConfig
 import com.zcrain.composeunit.ui.components.BannerScreen
 import com.zcrain.composeunit.ui.components.BigPosterScreen
-import com.zcrain.composeunit.ui.components.CodeInputScreen
+import com.zcrain.composeunit.ui.components.InputScreen
 import com.zcrain.composeunit.ui.components.HomeScreen
 import com.zcrain.composeunit.ui.components.LoadingScreen
 import com.zcrain.composeunit.ui.components.SelectorScreen
@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
                                 }
 
                                 NaviConfig.ROUTE_INPUT -> NavEntry(entry) {
-                                    CodeInputScreen()
+                                    InputScreen()
                                 }
 
                                 NaviConfig.ROUTE_BIG_POSTER -> NavEntry(entry) {

@@ -24,7 +24,7 @@ import com.zcrain.composeunit.widget.HintTextField
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun CodeInputScreen() {
+fun InputScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
