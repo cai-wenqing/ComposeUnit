@@ -18,4 +18,6 @@ object NaviConfig {
     const val ROUTE_BANNER = "Banner"
 
     const val ROUTE_SELECTOR = "Selector"
+
+    const val ROUTE_INLINE_TEXT = "InlineText"
 }

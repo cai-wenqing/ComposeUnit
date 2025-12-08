@@ -20,6 +20,7 @@ import com.zcrain.composeunit.ui.components.BannerScreen
 import com.zcrain.composeunit.ui.components.BigPosterScreen
 import com.zcrain.composeunit.ui.components.InputScreen
 import com.zcrain.composeunit.ui.components.HomeScreen
+import com.zcrain.composeunit.ui.components.InlineTextScreen
 import com.zcrain.composeunit.ui.components.LoadingScreen
 import com.zcrain.composeunit.ui.components.SelectorScreen
 
@@ -70,6 +71,10 @@ class MainActivity : ComponentActivity() {
 
                                 NaviConfig.ROUTE_SELECTOR -> NavEntry(entry) {
                                     SelectorScreen()
+                                }
+
+                                NaviConfig.ROUTE_INLINE_TEXT -> NavEntry(entry) {
+                                    InlineTextScreen()
                                 }
 
                                 else -> NavEntry(entry) {

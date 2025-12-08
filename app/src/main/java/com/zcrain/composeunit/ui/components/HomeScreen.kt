@@ -30,6 +30,7 @@ fun HomeScreen(navList: SnapshotStateList<String>) {
         NaviConfig.ROUTE_BIG_POSTER,
         NaviConfig.ROUTE_BANNER,
         NaviConfig.ROUTE_SELECTOR,
+        NaviConfig.ROUTE_INLINE_TEXT,
     )
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(15.dp),
